@@ -105,29 +105,31 @@
             </hr>
         </td>
         <td width="70%">
-            <h1 align="center">Дякуємо за реєстрацію!!</h1>
-            <h1 align="center">Список зареєстрованих!!</h1>
-            <TABLE align="center" border="1" width="600">
-                <tr>
-                    <td align="center"><b>Прізвище</b></td>
-                    <td align="center"><b>Ім'я</b></td>
-                    <td align="center"><b>E-mail</b></td>
-                    <td align="center"><b>Пароль</b></td>
-        </tr>
-            <?php
-            $data = file("baza.txt");
-            foreach ($data as $line) {
-                $trs = explode (";", $line);
-                echo '<tr>';
-                echo <'td>'.$trs[0]. '</td>';
-                echo <'td>'.$trs[1]. '</td>';
-                echo <'td>'.$trs[2]. '</td>';
-                echo <'td>'.$trs[3]. '</td>';
-                echo '</tr>';
-            }
-            ?>
-            </table>';
-            </h1>
+           <?php
+        echo '<h1 align="center">Хто до нас на сайт заходив !</h1>';
+        echo '<TABLE align="center" border="1" width="800" >';
+                  echo '<tr>';
+
+         echo '<td align="center">IP Adress</td>';
+         echo '<td align="center"Браузер</td>';
+         echo '<td align="center">Дата</td>';
+
+                    echo '</tr>';
+
+         $data = file("log.txt");
+         foreach ($data as $line) {
+             $trs = explode("|", $line);
+             echo '<tr>';
+             echo '<td>'. $trs[0].'</td>';
+             echo '<td>'. $trs[1].'</td>';
+             echo '<td>'. $trs[2].'</td>';
+             echo '</tr>';
+         }        
+         echo '</table>';
+         ?>   
+
+        
+        
         </td>
     </tr>
     <tr>
